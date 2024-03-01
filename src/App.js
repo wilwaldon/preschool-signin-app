@@ -50,8 +50,8 @@ const App = () => {
         required
       />
       <SignatureCanvas penColor='black' ref={sigPad} canvasProps={{ className: 'signatureCanvas' }} />
-      <button onClick={() => handleSign('in')}>Sign In</button>
-      <button onClick={() => handleSign('out')}>Sign Out</button>
+      <button className='submit' onClick={() => handleSign('in')}>Sign In</button>
+      <button className='submit' onClick={() => handleSign('out')}>Sign Out</button>
       {childPhoto && <img src={childPhoto} alt="Child" style={{ marginTop: '20px', maxWidth: '200px', borderRadius: '10px' }} />}
     </div>
   );

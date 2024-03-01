@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-
 .App {
   display: flex;
   flex-direction: column;
@@ -43,7 +42,6 @@ button {
   font-weight: 600;
 }
 
-/* Add styles for the input field */
 input[type="text"] {
   padding: 20px 0;
   margin-top: 20px;
@@ -52,4 +50,10 @@ input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 50vw;
+}
+
+/* Toast styles */
+
+.Toastify__close-button {
+  width: 10px;
 }
