@@ -46,9 +46,6 @@ const App = () => {
   return (
     <div className="App">
       <ToastContainer />
-      <button onClick={() => setShowRegistrationForm(!showRegistrationForm)}>
-        {showRegistrationForm ? 'Cancel Registration' : 'Register Child'}
-      </button>
       {showRegistrationForm && <RegisterChildForm onRegister={handleRegisterChild} />}
       {!showRegistrationForm && (
         <>
@@ -64,6 +61,9 @@ const App = () => {
           <button onClick={() => handleSign('in')}>Sign In</button>
           <button onClick={() => handleSign('out')}>Sign Out</button>
           {currentChildPhoto && <img src={currentChildPhoto} alt="Child" style={{ marginTop: '20px', maxWidth: '200px', borderRadius: '10px' }} />}
+          <a href="#" onClick={() => setShowRegistrationForm(!showRegistrationForm)} style={{ cursor: 'pointer', textDecoration: 'underline', color: 'blue' }}>
+          {showRegistrationForm ? 'Cancel Registration' : 'Register Child'}
+          </a>
         </>
       )}
     </div>
