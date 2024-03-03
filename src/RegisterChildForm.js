@@ -31,14 +31,16 @@ const RegisterChildForm = ({ onRegister }) => {
   };
 
   return (
+    <div className="">
     <form onSubmit={handleSubmit}>
-      <input
+        <input
         type="text"
         placeholder="Child's Name"
         value={childName}
         onChange={(e) => setChildName(e.target.value)}
         required
       />
+
       <input
         type="number"
         placeholder="Child's Age"
@@ -54,6 +56,7 @@ const RegisterChildForm = ({ onRegister }) => {
       />
       <button type="submit">Register Child</button>
     </form>
+    </div>
   );
 };
 

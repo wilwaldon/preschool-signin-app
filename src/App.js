@@ -45,27 +45,45 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className='mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8'>
       <ToastContainer />
       {showRegistrationForm && <RegisterChildForm onRegister={handleRegisterChild} />}
       {!showRegistrationForm && (
         <>
-          <h1>Preschool Sign-In/Out</h1>
+          <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
+          <h1 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Preschool Sign-In/Out</h1>
+          </div>
+          <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'></div>
+          <label for='childsName' className='block text-sm font-medium leading-6 text-gray-900'>Childs Name</label>
+          <div className='mt-2'>
           <input
+            id="childsName"
+            name="childsName"
             type="text"
-            placeholder="Child's Name"
             value={currentChild}
             onChange={(e) => setCurrentChild(e.target.value)}
             required
+            className='block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
           />
+          </div>
+          <div className='mt-2'>
           <SignatureCanvas penColor='black' ref={sigPad} canvasProps={{ className: 'signatureCanvas' }} />
-          <button onClick={() => handleSign('in')}>Sign In</button>
-          <button onClick={() => handleSign('out')}>Sign Out</button>
-          {currentChildPhoto && <img src={currentChildPhoto} alt="Child" style={{ marginTop: '20px', maxWidth: '200px', borderRadius: '10px' }} />}
-          <a href="#" onClick={() => setShowRegistrationForm(!showRegistrationForm)} style={{ cursor: 'pointer', textDecoration: 'underline', color: 'blue' }}>
+          </div>
+          <div className='grid grid-cols-3 gap-4 content-start w-full text-center h-36'>
+          <div className='flex gap-3'>
+          <button onClick={() => handleSign('in')} className='mt-6 flex w-half items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'>Sign In</button>
+          </div>
+          <div className='flex gap-3'>
+          <button onClick={() => handleSign('out')} className='mt-6 flex w-half items-center justify-center rounded-md border px-8 py-3 text-base font-medium text-black focus:outline-none focus:ring-2 focus:ring-offset-2 adu alm arf arv avz awf axu bbm bbs bbw bce big'>Sign Out</button>
+          </div>
+          </div>
+          {currentChildPhoto && <img src={currentChildPhoto} alt="Child" style={{ marginTop: '20px', maxWidth: '70px', borderRadius: '5px' }} />}
+          Not Registered? <a href="#" className='text-blue-700' onClick={() => setShowRegistrationForm(!showRegistrationForm)}>
           {showRegistrationForm ? 'Cancel Registration' : 'Register Child'}
           </a>
         </>
       )}
+    </div>
     </div>
   );
 };
