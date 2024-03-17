@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-  const [currentView, setCurrentView] = useState('register'); // 'register', 'splash', 'main'
+  const [currentView, setCurrentView] = useState('register'); 
   const [registeredChild, setRegisteredChild] = useState(null);
   const [currentChild, setCurrentChild] = useState('');
   const sigPad = useRef(null);
@@ -16,6 +16,7 @@ const App = () => {
     setCurrentView('splash');
     toast.success(`${childData.name} has been registered successfully!`);
   };
+  
 
   const goToSignIn = () => {
     setCurrentView('main');
@@ -49,8 +50,8 @@ const App = () => {
             required
           />
           <SignatureCanvas penColor='black' ref={sigPad} canvasProps={{ className: 'signatureCanvas' }} />
-          <button onClick={() => handleSign('in')}>Sign In</button>
-          <button onClick={() => handleSign('out')}>Sign Out</button>
+          <button onClick={() => handleSign('in')} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign In</button>
+          <button onClick={() => handleSign('out')} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign Out</button>
         </>
       )}
     </div>
