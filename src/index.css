@@ -27,10 +27,8 @@ code {
 
 .signatureCanvas {
   border: 2px solid #ccc;
-  border-radius: 5px;
   width: 50vw;
   height: 25vh;
-  margin-top: 20px;
 }
 
 /* Toast styles */

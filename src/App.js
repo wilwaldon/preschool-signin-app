@@ -33,14 +33,16 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App bg-slate-100">
+      <div className="flex flex-col items-center justify-center min-h-screen">
       <ToastContainer />
       {currentView === 'register' && <RegisterChildForm onRegister={handleRegisterChild} />}
       {currentView === 'splash' && registeredChild && (
         <SplashScreen child={registeredChild} onContinue={goToSignIn} />
       )}
       {currentView === 'main' && (
-        <>
+        <><img src="/kidlogger.png" alt="KidLogger Logo" className="w-3/4 max-w-xs mb-10"
+      /> 
           <h1 className="mb-10 text-3xl font-extrabold tracking-tight text-slate-900">Preschool Sign-In/Out</h1>
           <input
             type="text"
@@ -48,12 +50,14 @@ const App = () => {
             value={currentChild}
             onChange={(e) => setCurrentChild(e.target.value)}
             required
+            className="w-full rounded-full bg-slate-50"
           />
-          <SignatureCanvas penColor='black' ref={sigPad} canvasProps={{ className: 'signatureCanvas' }} />
-          <button onClick={() => handleSign('in')} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10 w-full">Sign In</button>
-          <button onClick={() => handleSign('out')} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5 w-full">Sign Out</button>
+          <SignatureCanvas penColor='black' className="rounded-full" ref={sigPad} canvasProps={{ className: 'signatureCanvas rounded-lg mt-5' }} />
+          <button onClick={() => handleSign('in')} className="bg-purple text-white font-bold py-4 px-4 rounded-full mt-10 w-full">Sign In</button>
+          <button onClick={() => handleSign('out')} className="bg-purple text-white font-bold py-4 px-4 rounded-full mt-5 w-full">Sign Out</button>
         </>
       )}
+      </div>
     </div>
   );
 };
