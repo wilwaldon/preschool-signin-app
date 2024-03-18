@@ -6,8 +6,7 @@ const SplashScreen = ({ child, onContinue }) => {
   return (
       <div>
         <div className="flex flex-col items-center justify-center min-h-screen">
-          <img src="/kidlogger.png" alt="KidLogger Logo" className="w-3/4 max-w-xs mb-10"
-      /> 
+          <h1 className='font-bold font-sans text-5xl mb-10 text-orange-500'>Log My Kid</h1>
           <h1 className="mb-10 text-3xl font-extrabold tracking-tight text-slate-900 w-full">Thanks for Registering!</h1>
           <h2 className="text-base font-bold leading-7 text-gray-900 text-xl mb-5 capitalize">Name: {child.name}</h2>
           <h2 className="text-base font-bold leading-7 text-gray-900 text-xl mb-10 capitalize">Age: {child.age}</h2>

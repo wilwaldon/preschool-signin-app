@@ -9,7 +9,7 @@ module.exports = {
         'purple': '#553feb', // Add your custom color here
       },
       fontFamily: {
-        sans: ['Kanit', 'sans-serif'],
+        header: ['Kanit', 'sans-serif'],
       },
     },
   },

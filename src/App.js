@@ -41,9 +41,8 @@ const App = () => {
         <SplashScreen child={registeredChild} onContinue={goToSignIn} />
       )}
       {currentView === 'main' && (
-        <><img src="/kidlogger.png" alt="KidLogger Logo" className="w-3/4 max-w-xs mb-10"
-      /> 
-          <h1 className="mb-10 text-3xl font-extrabold tracking-tight text-slate-900">Preschool Sign-In/Out</h1>
+        <>
+          <h1 className='font-bold font-sans text-5xl mb-10 text-orange-500'>Log My Kid</h1>
           <input
             type="text"
             placeholder="Child's Name"

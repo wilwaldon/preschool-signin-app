@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import main from './SplashScreen'; // Make sure to have this component
 
 const RegisterChildForm = ({ onRegister }) => {
   const [childName, setChildName] = useState('');
@@ -31,7 +30,7 @@ const RegisterChildForm = ({ onRegister }) => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1>Log My Kid</h1>
+      <h1 className='font-bold font-sans text-5xl mb-10 text-orange-500'>Log My Kid</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-xs">
         <input
           type="text"
