@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         'purple': '#553feb', // Add your custom color here
       },
+      fontFamily: {
+        sans: ['Kanit', 'sans-serif'],
+      },
     },
   },
   plugins: [

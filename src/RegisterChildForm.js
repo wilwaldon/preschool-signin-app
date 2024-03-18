@@ -31,8 +31,7 @@ const RegisterChildForm = ({ onRegister }) => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <img src="/kidlogger.png" alt="KidLogger Logo" className="w-3/4 max-w-xs mb-10"
-      /> 
+      <h1>Log My Kid</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-xs">
         <input
           type="text"
