@@ -8,7 +8,6 @@ const SplashPage = ({ onNavigate }) => {
     // If you're using simple state management for navigation, it might look like this:
     // onNavigate('learnMoreView');
   };
-
   return (
     <div className="font-sans min-h-screen flex flex-col">
       {/* Header/Navigation */}
