@@ -1,25 +1,26 @@
 import React, { useState, useRef } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
-import RegisterChildForm from './RegisterChildForm'; // Make sure to have this component
-import SplashScreen from './SplashScreen'; // Make sure to have this component
+import RegisterChildForm from './RegisterChildForm';
+import SplashPage from './SplashPage';
+import LearnMore from './LearnMore'; // Ensure this is imported
+import OriginalSplashScreen from './SplashScreen'; // If still needed
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-  const [currentView, setCurrentView] = useState('register'); 
+  const [currentView, setCurrentView] = useState('splash');
   const [registeredChild, setRegisteredChild] = useState(null);
   const [currentChild, setCurrentChild] = useState('');
   const sigPad = useRef(null);
 
+  const navigate = (view) => {
+    setCurrentView(view);
+  };
+
   const handleRegisterChild = (childData) => {
     setRegisteredChild(childData);
-    setCurrentView('splash');
     toast.success(`${childData.name} has been registered successfully!`);
-  };
-  
-
-  const goToSignIn = () => {
-    setCurrentView('main');
+    setCurrentView('originalSplash'); // Or any other view you'd like to navigate to
   };
 
   const handleSign = (action) => {
@@ -30,33 +31,23 @@ const App = () => {
     toast.success(`${currentChild} ${action === 'in' ? 'signed in' : 'signed out'} successfully!`);
     setCurrentChild('');
     sigPad.current.clear();
+    setCurrentView('splash'); // Or any other view you'd like to navigate to after signing
   };
 
   return (
     <div className="App bg-slate-100">
-      <div className="flex flex-col items-center justify-center min-h-screen">
       <ToastContainer />
+      {currentView === 'splash' && <SplashPage onNavigate={navigate} />}
       {currentView === 'register' && <RegisterChildForm onRegister={handleRegisterChild} />}
-      {currentView === 'splash' && registeredChild && (
-        <SplashScreen child={registeredChild} onContinue={goToSignIn} />
+      {currentView === 'originalSplash' && registeredChild && (
+        <OriginalSplashScreen child={registeredChild} onContinue={() => navigate('main')} />
       )}
       {currentView === 'main' && (
-        <>
-          <h1 className='font-bold font-sans text-5xl mb-10 text-orange-500'>Log My Kid</h1>
-          <input
-            type="text"
-            placeholder="Child's Name"
-            value={currentChild}
-            onChange={(e) => setCurrentChild(e.target.value)}
-            required
-            className="w-full rounded-full bg-slate-50"
-          />
-          <SignatureCanvas penColor='black' className="rounded-full" ref={sigPad} canvasProps={{ className: 'signatureCanvas rounded-lg mt-5' }} />
-          <button onClick={() => handleSign('in')} className="bg-purple text-white font-bold py-4 px-4 rounded-full mt-10 w-full">Sign In</button>
-          <button onClick={() => handleSign('out')} className="bg-purple text-white font-bold py-4 px-4 rounded-full mt-5 w-full">Sign Out</button>
-        </>
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          {/* Main sign in/out content here */}
+        </div>
       )}
-      </div>
+      {currentView === 'learnMore' && <LearnMore onNavigate={navigate} />}
     </div>
   );
 };
