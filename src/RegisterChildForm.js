@@ -48,9 +48,8 @@ const RegisterChildForm = ({ onRegister }) => {
   const inputStyle = "w-full mb-4 border-0 bg-transparent text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 rounded-full shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 bg-slate-50";
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className='font-bold font-sans text-5xl mb-10 text-orange-500'>Log My Kid</h1>
-      <form onSubmit={handleSubmit} className="w-full max-w-xs">
+    <div className="flex flex-col items-center justify-center mt-20 pb-20">
+        <form onSubmit={handleSubmit} className="w-full max-w-xs">
         <input type="text" placeholder="Child's Name" value={childName} onChange={(e) => setChildName(e.target.value)} required className={inputStyle} />
         <input type="number" placeholder="Child's Age" value={childAge} onChange={(e) => setChildAge(e.target.value)} required className={inputStyle} />
         <input type="file" accept="image/*" onChange={handlePhotoChange} required className={inputStyle} />

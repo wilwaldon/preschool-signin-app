@@ -2,8 +2,9 @@ import React, { useState, useRef } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import RegisterChildForm from './RegisterChildForm';
 import SplashPage from './SplashPage';
-import LearnMore from './LearnMore'; // Ensure this is imported
-import OriginalSplashScreen from './SplashScreen'; // If still needed
+import LearnMore from './LearnMore';
+import OriginalSplashScreen from './SplashScreen';
+import Header from './Header'; // Import the Header component
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -20,7 +21,7 @@ const App = () => {
   const handleRegisterChild = (childData) => {
     setRegisteredChild(childData);
     toast.success(`${childData.name} has been registered successfully!`);
-    setCurrentView('originalSplash'); // Or any other view you'd like to navigate to
+    setCurrentView('originalSplash');
   };
 
   const handleSign = (action) => {
@@ -31,12 +32,13 @@ const App = () => {
     toast.success(`${currentChild} ${action === 'in' ? 'signed in' : 'signed out'} successfully!`);
     setCurrentChild('');
     sigPad.current.clear();
-    setCurrentView('splash'); // Or any other view you'd like to navigate to after signing
+    setCurrentView('splash');
   };
 
   return (
-    <div className="App bg-slate-100">
+    <div className="bg-slate-100 mx-auto px-4 sm:px-6 lg:px-8">
       <ToastContainer />
+      <Header onNavigate={navigate} /> {/* Include the Header component here */}
       {currentView === 'splash' && <SplashPage onNavigate={navigate} />}
       {currentView === 'register' && <RegisterChildForm onRegister={handleRegisterChild} />}
       {currentView === 'originalSplash' && registeredChild && (
