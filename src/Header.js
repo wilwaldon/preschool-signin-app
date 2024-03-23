@@ -2,10 +2,10 @@ import React from 'react';
 
 const Header = ({ onNavigate }) => {
   return (
-    <header className="flex justify-between items-center p-4 bg-gray-100 shadow-md">
+    <header className="flex justify-between items-center p-4 bg-gray-100">
       <div className="logo">
         {/* Replace with your logo */}
-        <img src="./kidlogger.png" alt="Logo" className="h-10" />
+        <h1><a href="onClick={() => onNavigate('splash')}" className="text-violet-600 font-extrabold text-2xl">KidLogger</a></h1>
       </div>
       <nav>
         <ul className="flex space-x-4">
@@ -13,7 +13,6 @@ const Header = ({ onNavigate }) => {
           <li className="cursor-pointer" onClick={() => onNavigate('register')}>Register</li>
           <li className="cursor-pointer" onClick={() => onNavigate('main')}>Sign In</li>
           <li className="cursor-pointer" onClick={() => onNavigate('learnMore')}>Learn More</li>
-          {/* Add or remove navigation items as needed */}
         </ul>
       </nav>
     </header>
