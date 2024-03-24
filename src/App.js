@@ -1,27 +1,31 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import SignatureCanvas from 'react-signature-canvas';
-import RegisterChildForm from './RegisterChildForm';
+import Header from './Header'; // Your Header component
+import Footer from './Footer'; // Your Footer component
 import SplashPage from './SplashPage';
-import LearnMore from './LearnMore';
-import Header from './Header';
 import LogInChild from './LogInChild';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import LearnMore from './LearnMore';
+import RegisterChildForm from './RegisterChildForm';
+// Import other pages/components as needed
 
 const App = () => {
   return (
     <Router>
-      <div className="bg-slate-100 mx-auto px-4 sm:px-6 lg:px-8 h-lvh">
-        <ToastContainer />
-        <Header />
-        <Routes> {/* Use Routes instead of Switch */}
-          <Route path="/" element={<SplashPage />} />
-          <Route path="/register" element={<RegisterChildForm />} />
-          <Route path="/login" element={<LogInChild />} />
-          <Route path="/learn-more" element={<LearnMore />} />
-        </Routes>
+      <div className="flex flex-col min-h-screen"> {/* Ensure full height and flex layout */}
+        <Header /> {/* Header included at the top */}
+
+        {/* Main content area, expand to fill the space between Header and Footer */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<SplashPage />} />
+            <Route path="/login" element={<LogInChild />} />
+            <Route path="/learn-more" element={<LearnMore />} />
+            <Route path="/register" element={<RegisterChildForm />} />
+            {/* Define more routes as needed */}
+          </Routes>
+        </main>
+
+        <Footer />
       </div>
     </Router>
   );

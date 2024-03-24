@@ -10,7 +10,7 @@ const Header = () => {
         </h1>
       </div>
       <nav>
-        <ul className="flex space-x-4">
+        <ul className="flex space-x-8 font-semibold">
           <li><Link to="/" className="text-black no-underline hover:text-violet-600">Home</Link></li>
           <li><Link to="/register" className="text-black no-underline hover:text-violet-600">Register</Link></li>
           <li><Link to="/login" className="text-black no-underline hover:text-violet-600">Sign In</Link></li>

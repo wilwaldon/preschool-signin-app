@@ -14,16 +14,16 @@ const SplashPage = () => {
 
   return (
     <div className="font-sans min-h-screen flex flex-col">
-      <div className="relative bg-black text-white vh-60">
+      <div className="relative bg-black text-black vh-60">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="hero bg-cover bg-center flex-1 flex items-center justify-center min-h-[60vh]" style={{ backgroundImage: 'url(./hero.jpg)' }}>
-          <div className="relative bg-cover bg-center h-96 items-center justify-center h-full">
+          <div className="relative bg-cover bg-center h-96 items-center justify-center h-full bg-white border-l-8 border-indigo-500 p-10">
             <h1 className="text-4xl font-bold mb-4">Welcome to KidLogger</h1>
             <p className="mb-8">Safeguarding your child's day, every day.</p>
-            <Link to="/register" className="bg-transparent border border-white hover:bg-white hover:text-blue-700 text-white font-bold py-2 px-4 rounded">
+            <Link to="/register" className="bg-transparent border border-indigo-500 hover:bg-white hover:text-blue-700 text-black font-bold py-2 px-4 rounded">
               Register
             </Link>
-            <Link to="/learn-more" className="bg-transparent border border-white hover:bg-white hover:text-blue-700 text-white font-bold py-2 px-4 rounded ml-5">
+            <Link to="/learn-more" className="bg-transparent border hover:bg-white hover:text-blue-700 text-black font-bold py-2 px-4 rounded ml-5 border-indigo-500">
               Learn more
             </Link>
           </div>
