@@ -1,6 +1,8 @@
 // src/LearnMore.js
 
 import React from 'react';
+import events from './eventsData'; // Adjust the import path according to your file structure
+
 
 const LearnMore = ({ onNavigate }) => {
   return (
@@ -10,7 +12,6 @@ const LearnMore = ({ onNavigate }) => {
         <div class="mr-auto place-self-center lg:col-span-7">
             <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Learn More About Us</h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Secure your child's preschool experience with our site's easy, safe login for mindful parenting and peace of mind.</p>
-            
             
         </div>
         <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
@@ -32,3 +33,5 @@ const LearnMore = ({ onNavigate }) => {
 };
 
 export default LearnMore;
+
+
