@@ -36,8 +36,8 @@ const RegisterChildForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-20 pb-20">
-      <h2 className="text-3xl font-bold mb-8">Register Child</h2>
+    <div className="flex flex-col items-left justify-center mt-20 pb-20 text-left">
+      <h2 className="text-3xl font-bold mb-8 text-left">Register Child</h2>
       <form onSubmit={handleSubmit} className="w-full space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -85,7 +85,7 @@ const RegisterChildForm = () => {
           <label htmlFor="allergies" className="block text-sm font-medium text-gray-700">Allergies (if any)</label>
           <input type="text" id="allergies" value={allergies} onChange={(e) => setAllergies(e.target.value)} className="w-full border border-gray-300 rounded-md p-2" />
         </div>
-        <button type="submit" className="mt-4 w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-200">Register Child</button>
+        <button type="submit" className="mt-4 w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors duration-200 w-64">Register Child</button>
       </form>
     </div>
   );
