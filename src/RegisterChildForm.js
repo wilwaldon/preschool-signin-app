@@ -36,7 +36,7 @@ const RegisterChildForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-left justify-center mt-20 pb-20 text-left">
+    <div className="flex flex-col items-left mt-10 pb-20 text-left gap-8 items-center py-8 px-4 mx-auto xl:gap-16 grid-rows-3 sm:py-16 lg:px-6">
       <h2 className="text-3xl font-bold mb-8 text-left">Register Child</h2>
       <form onSubmit={handleSubmit} className="w-full space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

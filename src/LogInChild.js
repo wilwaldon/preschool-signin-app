@@ -24,8 +24,8 @@ const LogInChild = () => {
 
   return (
     <div className="container mx-auto p-4">
-  <div className="grid grid-cols-2 gap-4">
-    <div className="max-w-lg my-10 bg-white p-8">
+  <div className="grid grid-cols-2 gap-8">
+    <div className="max-w-lg my-10 bg-white">
       <ToastContainer />
       <h2 className="text-2xl font-bold text-center mb-6">Log In Child</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -68,7 +68,7 @@ const LogInChild = () => {
         </button>
       </form>
     </div>
-    <div className="max-w-lg my-10 bg-white p-8">
+    <div className="max-w-lg my-10 bg-white">
       <img src="https://images.unsplash.com/photo-1613950190144-4f2a84c75e8c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="kids playing" className="h-48 w-full object-cover md:h-full" />
     </div>
     </div>

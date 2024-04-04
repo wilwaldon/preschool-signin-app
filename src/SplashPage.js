@@ -51,17 +51,26 @@ const SplashPage = () => {
           </svg>
           Programs</div>
         <div className="bg-indigo-600 p-8">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 float-left mr-5">
+          <Link to="/register">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 float-left mr-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
           </svg>
-
-          Learn More</div>
+          Learn More</Link></div>
         </div>
       </div>
       </section>
+      <section class="bg-white dark:bg-gray-900">
+      <div class="gap-8 items-center py-8 px-4 max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+          <img class="w-full dark:hidden" src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="dashboard image"></img>
+          <div class="mt-4 md:mt-0">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Let's create memories that bring us together.</h2>
+            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">We help you connect with people who share your interests. Connect with your friends and family as well as discovering new ones.</p>
+          </div>
+      </div>
+    </section>
 
       {/* Latest Updates Area */}
-      <div className="content p-4 bg-gray-50 flex-1">
+      <div className="content p-8 flex-1 bg-slate-300">
         <h2 className="text-2xl font-bold mb-4">Latest Updates</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map(article => (

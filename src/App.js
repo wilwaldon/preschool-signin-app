@@ -7,6 +7,7 @@ import SplashScreen from './SplashScreen'; //after user registers
 import LogInChild from './LogInChild'; //login screen
 import LearnMore from './LearnMore'; //learn more screen
 import RegisterChildForm from './RegisterChildForm'; //register screen
+import {NextUIProvider} from "@nextui-org/react";
 
 const App = () => {
   return (
